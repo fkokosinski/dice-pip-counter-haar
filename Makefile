@@ -19,7 +19,7 @@ NEG = $(NEG_RAW:raw-data/neg/%.jpg=$(NEG_DIR)/%.jpg)
 OUT_VEC = out.vec
 
 default: prepare $(OUT_VEC) $(NEG_DAT)
-	opencv_traincascade -data $(OUT_DIR) -vec $(OUT_VEC) -bg $(NEG_DAT) -numPos 900 -numNeg 4 -w 25 -h 25 -numThreads 3
+	opencv_traincascade -data $(OUT_DIR) -vec $(OUT_VEC) -bg $(NEG_DAT) -numPos 900 -numNeg 4 -w 25 -h 25 -numThreads 3 -numStages 30
 
 prepare: $(POS_DIR) $(NEG_DIR) $(OUT_DIR)
 
